@@ -1,11 +1,15 @@
 {
-  "name": "react-kavia",
+  "name": "iot-security-monitoring-frontend",
   "version": "0.1.0",
   "private": true,
+  "description": "Retro-themed IoT security monitoring dashboard frontend",
   "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "socket.io-client": "^4.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
