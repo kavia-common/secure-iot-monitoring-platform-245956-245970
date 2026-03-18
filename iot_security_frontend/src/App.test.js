@@ -1,8 +1,32 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+const originalFetch = global.fetch;
+
+beforeEach(() => {
+  global.fetch = jest.fn().mockResolvedValue({
+    ok: true,
+    json: async () => ({
+      status: 'ok',
+      message: 'healthy',
+      services: {
+        database: 'connected:myapp',
+        realtime: 'ready',
+        mockGenerator: 'running'
+      }
+    })
+  });
+});
+
+afterEach(() => {
+  global.fetch = originalFetch;
+  window.localStorage.clear();
+});
+
+test('renders the IoT integration dashboard heading', async () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  expect(
+    await screen.findByText(/IoT Security Monitoring Platform/i)
+  ).toBeInTheDocument();
 });
