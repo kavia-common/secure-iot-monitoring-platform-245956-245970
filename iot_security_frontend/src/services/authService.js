@@ -1,8 +1,8 @@
 import { DEMO_USERS } from '../data/demoData';
+import { API_BASE_URL } from '../config/runtimeConfig';
 
 const AUTH_SESSION_KEY = 'iot-security-monitor-session';
 const DEMO_USERS_KEY = 'iot-security-monitor-users';
-const API_BASE_URL = (process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001').replace(/\/$/, '');
 
 function getStorage() {
   if (typeof window === 'undefined') {

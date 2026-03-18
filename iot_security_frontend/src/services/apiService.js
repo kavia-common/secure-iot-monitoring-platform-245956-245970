@@ -1,8 +1,8 @@
 import { DEMO_DEVICES, DEMO_EVENTS } from '../data/demoData';
+import { API_BASE_URL } from '../config/runtimeConfig';
 
 const DEVICES_KEY = 'iot-security-monitor-devices';
 const EVENTS_KEY = 'iot-security-monitor-events';
-const API_BASE_URL = (process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001').replace(/\/$/, '');
 
 function getStorage() {
   if (typeof window === 'undefined') {

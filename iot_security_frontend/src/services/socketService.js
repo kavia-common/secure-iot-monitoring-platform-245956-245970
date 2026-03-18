@@ -1,10 +1,7 @@
 import { io } from 'socket.io-client';
 
 import { DEMO_DEVICES } from '../data/demoData';
-
-const SOCKET_URL =
-  (process.env.REACT_APP_SOCKET_URL || process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001')
-    .replace(/\/$/, '');
+import { SOCKET_URL } from '../config/runtimeConfig';
 
 function randomItem(items) {
   return items[Math.floor(Math.random() * items.length)];
